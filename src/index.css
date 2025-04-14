@@ -18,6 +18,13 @@ nav a.active {
   background-color: #9538e2;
   color: white;
 }
+.banner-button a.active {
+  background-color: white;
+  color: #9538e2;
+  border: none;
+  outline: none;
+  font-weight: bold;
+}
 .carts a.active::after {
   content: "";
   width: 0;
