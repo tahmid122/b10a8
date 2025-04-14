@@ -1,16 +1,16 @@
 import React from "react";
 import NavBar from "../NavBar/NavBar";
-import { Outlet } from "react-router";
+import { Outlet, useLocation } from "react-router";
 import Footer from "../Footer/Footer";
-
-const root = () => {
+const Root = () => {
+  const location = useLocation();
   return (
     <div>
-      <NavBar />
+      {location.pathname === "/" ? "" : <NavBar />}
       <Outlet />
       <Footer />
     </div>
   );
 };
 
-export default root;
+export default Root;
