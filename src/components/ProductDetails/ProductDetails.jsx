@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import Banner from "../Banner/Banner";
 import { Heart, ShoppingCart, Star } from "lucide-react";
 import { useLoaderData, useParams } from "react-router";
+import { setLocalStorage } from "../../lib/LocalStorage/localStorage";
+import { setLocalStorage2 } from "../../lib/Wishlist/wishlist";
 
 const ProductDetails = () => {
   const { proId } = useParams();
   const [gadget, setGadget] = useState({});
   const loaderData = useLoaderData();
-  console.log(loaderData);
-  console.log(proId);
   useEffect(() => {
     const expectedProduct = loaderData.find(
       (data) => data.product_id === proId
@@ -73,10 +73,20 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className="flex items-center gap-4 mt-4">
-              <button className="btn  rounded-full text-white bg-[#9538e2] flex items-center justify-center ">
+              <button
+                onClick={() => {
+                  setLocalStorage(gadget.product_id);
+                }}
+                className="btn  rounded-full text-white bg-[#9538e2] flex items-center justify-center "
+              >
                 Add To Cart <ShoppingCart />
               </button>
-              <button className="w-10 h-10 border border-slate-300 flex items-center justify-center rounded-full cursor-pointer">
+              <button
+                onClick={() => {
+                  setLocalStorage2(gadget.product_id);
+                }}
+                className="w-10 h-10 border border-slate-300 flex items-center justify-center rounded-full cursor-pointer"
+              >
                 <Heart />
               </button>
             </div>

@@ -13,6 +13,7 @@ import Product from "./components/Explore/Product";
 import AllProducts from "./components/Explore/AllProducts";
 import Product2 from "./components/Explore/Product2";
 import AllProducts2 from "./components/Explore/AllProducts2";
+import { StrictMode } from "react";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,8 +29,16 @@ const router = createBrowserRouter([
         Component: Dashboard,
         children: [
           // { index: true, Component: Cart },
-          { path: "cart", Component: Cart },
-          { path: "wishlist", Component: Wishlist },
+          {
+            path: "cart",
+            loader: () => fetch("/gadget.json"),
+            Component: Cart,
+          },
+          {
+            path: "wishlist",
+            loader: () => fetch("/gadget.json"),
+            Component: Wishlist,
+          },
         ],
       },
       {
@@ -49,5 +58,7 @@ const router = createBrowserRouter([
   },
 ]);
 createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
 );

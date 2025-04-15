@@ -1,22 +1,63 @@
 import { ArrowDown01, CircleX } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLoaderData } from "react-router";
+import {
+  getToClient,
+  removeFromLs,
+  removeLs,
+} from "../../lib/LocalStorage/localStorage";
 
 const Cart = () => {
   const [isTrue, setIsTrue] = useState(false);
+  const [price, setPrice] = useState(0);
+  const [cart, setCart] = useState([]);
+  const loaderData = useLoaderData();
   function disableScroll() {
     document.body.style.overflow = "hidden";
   }
   function enableScroll() {
     document.body.style.overflow = "";
   }
+  const filterAndSet = (lsData) => {
+    const fdata = [];
+    lsData.map((data) => {
+      // console.log(data);
+      const filter = loaderData.find((ld) => ld.product_id === data);
+      fdata.push(filter);
+    });
+    setCart(fdata);
+  };
+  // console.log(cart);
+  useEffect(() => {
+    const lsData = getToClient();
+    console.log(lsData);
+
+    filterAndSet(lsData);
+  }, []);
+  useEffect(() => {
+    cart.map((ca) => setPrice((p) => p + ca.price));
+  }, [cart]);
+  // console.log(cart);
+  const handleSort = () => {
+    const copy = [...cart];
+    const sorting = copy.sort(function (a, b) {
+      return a.price - b.price;
+    });
+    console.log("sort", sorting);
+    setCart(sorting);
+  };
+  console.log("cart", cart);
   return (
     <div className="mx-40 mt-12 mb-28">
       <div className="flex items-center justify-between">
         <h5 className="font-bold text-2xl">Cart</h5>
         <div className="flex items-center gap-6">
-          <h5 className="font-bold text-2xl">Total cost: 999.99</h5>
+          <h5 className="font-bold text-2xl">Total cost: ${price}</h5>
           <div className="flex items-center gap-4">
-            <button className="btn btn-outline text-[#9538e2] hover:bg-[#9538e2] hover:text-white rounded-full">
+            <button
+              onClick={() => handleSort()}
+              className="btn btn-outline text-[#9538e2] hover:bg-[#9538e2] hover:text-white rounded-full"
+            >
               Sort by Price <ArrowDown01 />
             </button>
             <button
@@ -32,50 +73,48 @@ const Cart = () => {
         </div>
       </div>
       <div className="mt-8">
-        <div className="flex items-center justify-between bg-white rounded-2xl p-8 mb-6">
-          <div className="flex gap-8">
-            <img
-              className="w-[200px] h-[125px] object-cover  rounded-xl"
-              src="/banner.jpg"
-              alt=""
-            />
-            <div className="space-y-3 flex-1/2">
-              <h4 className="text-2xl font-semibold">
-                Samsung Galaxy S23 Ultra
-              </h4>
-              <p className="text-lg opacity-60">
-                Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-                display.
-              </p>
-              <p className="text-xl font-semibold">Price: $999.99</p>
-            </div>
-          </div>
-          <div>
-            <CircleX className="text-red-400 cursor-pointer" />
-          </div>
-        </div>
-        <div className="flex items-center justify-between bg-white rounded-2xl p-8 mb-6">
-          <div className="flex gap-8">
-            <img
-              className="w-[200px] h-[125px] object-cover  rounded-xl"
-              src="/banner.jpg"
-              alt=""
-            />
-            <div className="space-y-3 flex-1/2">
-              <h4 className="text-2xl font-semibold">
-                Samsung Galaxy S23 Ultra
-              </h4>
-              <p className="text-lg opacity-60">
-                Ultra-slim, high-performance laptop with 13.4-inch Infinity Edge
-                display.
-              </p>
-              <p className="text-xl font-semibold">Price: $999.99</p>
-            </div>
-          </div>
-          <div>
-            <CircleX className="text-red-400 cursor-pointer" />
-          </div>
-        </div>
+        {cart.length > 0 ? (
+          cart.map((item) => {
+            const {
+              product_id,
+              product_image,
+              product_title,
+              price,
+              description,
+            } = item;
+            return (
+              <div
+                key={product_id}
+                className="flex items-center justify-between bg-white rounded-2xl p-8 mb-6"
+              >
+                <div className="flex gap-8">
+                  <img
+                    className="w-[200px] h-[125px] object-cover  rounded-xl"
+                    src={product_image}
+                    alt=""
+                  />
+                  <div className="space-y-3 flex-1/2">
+                    <h4 className="text-2xl font-semibold">{product_title}</h4>
+                    <p className="text-lg opacity-60">{description}</p>
+                    <p className="text-xl font-semibold">Price: ${price}</p>
+                  </div>
+                </div>
+                <div>
+                  <CircleX
+                    onClick={() => {
+                      removeFromLs(product_id);
+                      filterAndSet(getToClient());
+                      setPrice(price - price);
+                    }}
+                    className="text-red-400 cursor-pointer"
+                  />
+                </div>
+              </div>
+            );
+          })
+        ) : (
+          <h1>No Item added yet</h1>
+        )}
       </div>
       {isTrue ? (
         <div className="w-full h-[100vh] bg-[#3a3232a7] fixed left-0 top-0 z-10 flex items-center justify-center">
@@ -87,12 +126,15 @@ const Cart = () => {
             </small>
             <small className="text-base opacity-60 font-medium">
               {" "}
-              Total: $2449.96
+              Total: ${price}
             </small>
             <button
               onClick={() => {
                 setIsTrue(false);
                 enableScroll();
+                removeLs();
+                setCart([]);
+                setPrice(0);
               }}
               className="text-base font-semibold btn btn-soft rounded-full w-full outline-none border-none mt-4"
             >
