@@ -1,0 +1,172 @@
+[
+  {
+    "product_id": "P101",
+    "product_title": "MacBook Pro 16-inch M3",
+    "product_image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1926&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Macbook",
+    "price": 2599,
+    "description": "Apple MacBook Pro with M3 chip and stunning Liquid Retina display.",
+    "specification": [
+      "16.2-inch Liquid Retina XDR",
+      "Apple M3 Pro chip",
+      "16GB RAM",
+      "1TB SSD",
+      "Up to 22 hours battery life"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P102",
+    "product_title": "iPhone 15",
+    "product_image": "https://plus.unsplash.com/premium_photo-1680985551009-05107cd2752c?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Iphone",
+    "price": 999,
+    "description": "iPhone 15 with Dynamic Island and new A17 Pro chip.",
+    "specification": [
+      "6.1-inch OLED display",
+      "A17 Pro chip",
+      "Dual 48MP camera",
+      "Face ID",
+      "512GB storage"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P103",
+    "product_title": "Samsung Galaxy Z Flip 5",
+    "product_image": "https://images.unsplash.com/photo-1703065477962-80bb1b614fd7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Phones",
+    "price": 1199,
+    "description": "Compact foldable phone with powerful specs and unique design.",
+    "specification": [
+      "6.7-inch Foldable AMOLED",
+      "Snapdragon 8 Gen 2",
+      "Dual 12MP cameras",
+      "512GB storage",
+      "3700mAh battery"
+    ],
+    "availability": true,
+    "rating": 4.6
+  },
+  {
+    "product_id": "P104",
+    "product_title": "Dell XPS 13 Plus",
+    "product_image": "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Laptop",
+    "price": 1399,
+    "description": "Premium ultrabook with InfinityEdge display and Intel i7 CPU.",
+    "specification": [
+      "13.4-inch FHD+ Display",
+      "Intel Core i7 13th Gen",
+      "16GB RAM",
+      "1TB SSD",
+      "Touchscreen"
+    ],
+    "availability": true,
+    "rating": 4.5
+  },
+  {
+    "product_id": "P105",
+    "product_title": "Apple Watch Series 9",
+    "product_image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Smart Watches",
+    "price": 499,
+    "description": "Smart and health-focused watch with blood oxygen sensor.",
+    "specification": [
+      "45mm Retina Display",
+      "Heart rate & Blood Oxygen Monitor",
+      "S9 Chip",
+      "Up to 18 hours battery",
+      "Water-resistant"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P106",
+    "product_title": "Sony WH-1000XM5",
+    "product_image": "https://plus.unsplash.com/premium_photo-1678099940967-73fe30680949?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Accessories",
+    "price": 399,
+    "description": "Industry-leading noise cancellation wireless headphones.",
+    "specification": [
+      "Noise Cancelling",
+      "40-hour battery life",
+      "Bluetooth 5.2",
+      "Multi-device pairing",
+      "Hi-Res Audio support"
+    ],
+    "availability": true,
+    "rating": 4.9
+  },
+  {
+    "product_id": "P107",
+    "product_title": "Asus ROG Strix G17",
+    "product_image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Laptop",
+    "price": 1799,
+    "description": "Gaming beast powered by RTX 4070 and AMD Ryzen 9.",
+    "specification": [
+      "17.3-inch 240Hz display",
+      "Ryzen 9 7945HX",
+      "RTX 4070 GPU",
+      "32GB RAM",
+      "1TB SSD"
+    ],
+    "availability": true,
+    "rating": 4.7
+  },
+  {
+    "product_id": "P108",
+    "product_title": "Apple AirPods Pro (2nd Gen)",
+    "product_image": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=1978&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Accessories",
+    "price": 249,
+    "description": "Active Noise Cancelling earbuds with Adaptive Transparency.",
+    "specification": [
+      "ANC and Transparency Mode",
+      "H2 chip",
+      "Wireless Charging Case",
+      "Spatial Audio",
+      "Up to 30 hours total battery"
+    ],
+    "availability": true,
+    "rating": 4.8
+  },
+  {
+    "product_id": "P109",
+    "product_title": "Google Pixel Watch 2",
+    "product_image": "https://images.unsplash.com/photo-1704942968209-6c1e05ef3f95?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Smart Watches",
+    "price": 349,
+    "description": "Sleek smartwatch with Fitbit health tracking features.",
+    "specification": [
+      "AMOLED Display",
+      "Fitbit integration",
+      "Google Assistant",
+      "24/7 heart rate tracking",
+      "Fast Charging"
+    ],
+    "availability": false,
+    "rating": 4.4
+  },
+  {
+    "product_id": "P110",
+    "product_title": "OnePlus Open",
+    "product_image": "https://images.unsplash.com/photo-1649515530664-7a3150983c7e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "category": "Phones",
+    "price": 1499,
+    "description": "Premium foldable with sleek design and multitasking capabilities.",
+    "specification": [
+      "7.8-inch AMOLED inner display",
+      "Snapdragon 8 Gen 2",
+      "Triple Hasselblad cameras",
+      "4805mAh battery",
+      "1TB storage"
+    ],
+    "availability": true,
+    "rating": 4.6
+  }
+]

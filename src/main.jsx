@@ -8,13 +8,21 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Cart from "./components/Cart/Cart";
 import Wishlist from "./components/Wishlist/Wishlist";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
+import Explore from "./components/Explore/Explore";
+import Product from "./components/Explore/Product";
+import AllProducts from "./components/Explore/AllProducts";
+import Product2 from "./components/Explore/Product2";
+import AllProducts2 from "./components/Explore/AllProducts2";
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children: [
       { index: true, Component: Home },
-      { path: "statistics", Component: Statistics },
+      {
+        path: "statistics",
+        Component: Statistics,
+      },
       {
         path: "dashboard",
         Component: Dashboard,
@@ -26,7 +34,16 @@ const router = createBrowserRouter([
       },
       {
         path: "product-details/:proId",
+        loader: () => fetch("/gadget.json"),
         Component: ProductDetails,
+      },
+      {
+        Component: Explore,
+        children: [{ path: "/:category", Component: AllProducts2 }],
+      },
+      {
+        path: "*",
+        element: <h1>404</h1>,
       },
     ],
   },

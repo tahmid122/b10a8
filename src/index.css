@@ -18,6 +18,10 @@ nav a.active {
   background-color: #9538e2;
   color: white;
 }
+.cat-btns a.active {
+  background-color: #9538e2;
+  color: white;
+}
 .banner-button a.active {
   background-color: white;
   color: #9538e2;
