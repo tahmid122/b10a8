@@ -1,9 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-const Banner = ({ header, para, isTrue = false }) => {
+const Banner = ({ header, para, isTrue = false, isTrue2 }) => {
   return (
-    <div className={`base-bg p-8 ${isTrue ? "" : "min-h-[345px]"}`}>
+    <div
+      className={`base-bg p-8 ${isTrue ? "" : isTrue2 ? "" : "min-h-[345px]"}`}
+    >
       <div className="flex flex-col items-center justify-center">
         <h3 className="font-bold text-[32px] text-white">{header}</h3>
         <p className="text-base text-white text-center mt-4 w-1/2">{para}</p>
