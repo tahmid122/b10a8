@@ -9,7 +9,6 @@ import {
 
 const Cart = () => {
   const [isTrue, setIsTrue] = useState(false);
-  const [price, setPrice] = useState(0);
   const [cart, setCart] = useState([]);
   const loaderData = useLoaderData();
   function disableScroll() {
@@ -30,29 +29,24 @@ const Cart = () => {
   // console.log(cart);
   useEffect(() => {
     const lsData = getToClient();
-    console.log(lsData);
-
     filterAndSet(lsData);
   }, []);
-  useEffect(() => {
-    cart.map((ca) => setPrice((p) => p + ca.price));
-  }, [cart]);
+  console.log(cart);
   // console.log(cart);
   const handleSort = () => {
     const copy = [...cart];
     const sorting = copy.sort(function (a, b) {
       return a.price - b.price;
     });
-    console.log("sort", sorting);
     setCart(sorting);
   };
-  console.log("cart", cart);
+  const proPrice = cart.reduce((acc, pro) => acc + pro.price, 0);
   return (
-    <div className="mx-40 mt-12 mb-28">
-      <div className="flex items-center justify-between">
+    <div className="mx-10 md:mx-40 mt-12 mb-28">
+      <div className="flex md:flex-row md:gap-0 gap-2 flex-col items-center justify-between">
         <h5 className="font-bold text-2xl">Cart</h5>
-        <div className="flex items-center gap-6">
-          <h5 className="font-bold text-2xl">Total cost: ${price}</h5>
+        <div className="flex md:flex-row flex-col items-center gap-2 md:gap-6">
+          <h5 className="font-bold text-2xl">Total cost: ${proPrice}</h5>
           <div className="flex items-center gap-4">
             <button
               onClick={() => handleSort()}
@@ -85,11 +79,11 @@ const Cart = () => {
             return (
               <div
                 key={product_id}
-                className="flex items-center justify-between bg-white rounded-2xl p-8 mb-6"
+                className="flex items-center md:flex-row flex-col justify-between bg-white rounded-2xl p-8 mb-6"
               >
-                <div className="flex gap-8">
+                <div className="flex md:flex-row flex-col gap-8">
                   <img
-                    className="w-[200px] h-[125px] object-cover  rounded-xl"
+                    className="md:w-[200px] h-[200px] md:h-[125px] object-cover  rounded-xl"
                     src={product_image}
                     alt=""
                   />
@@ -104,7 +98,6 @@ const Cart = () => {
                     onClick={() => {
                       removeFromLs(product_id);
                       filterAndSet(getToClient());
-                      setPrice(price - price);
                     }}
                     className="text-red-400 cursor-pointer"
                   />
@@ -126,7 +119,7 @@ const Cart = () => {
             </small>
             <small className="text-base opacity-60 font-medium">
               {" "}
-              Total: ${price}
+              Total: ${proPrice}
             </small>
             <button
               onClick={() => {
@@ -134,7 +127,6 @@ const Cart = () => {
                 enableScroll();
                 removeLs();
                 setCart([]);
-                setPrice(0);
               }}
               className="text-base font-semibold btn btn-soft rounded-full w-full outline-none border-none mt-4"
             >

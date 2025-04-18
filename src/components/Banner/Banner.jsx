@@ -8,7 +8,7 @@ const Banner = ({ header, para, isTrue = false, isTrue2 }) => {
     >
       <div className="flex flex-col items-center justify-center">
         <h3 className="font-bold text-[32px] text-white">{header}</h3>
-        <p className="text-base text-white text-center mt-4 w-1/2">{para}</p>
+        <p className="text-base text-white text-center mt-4 md:w-1/2">{para}</p>
         {isTrue && (
           <div className="flex items-center gap-6 mt-6 banner-button">
             <NavLink

@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 const NavBar = () => {
   return (
-    <nav className="px-40 py-7 flex items-center justify-between bg-white">
+    <nav className="px-10 md:px-40 py-7 flex md:flex-row flex-col md:gap-0 gap-2 items-center justify-between bg-white">
       <div>
         <h2 className="text-xl font-bold">Gadget Heaven</h2>
       </div>

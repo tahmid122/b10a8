@@ -22,7 +22,7 @@ const Wishlist = () => {
     filterAndSet(lsData);
   }, []);
   return (
-    <div className="mx-40 mt-12 mb-28">
+    <div className="mx-10 md:mx-40 mt-12 mb-28">
       <div>
         <h5 className="font-bold text-2xl">Wishlist</h5>
       </div>
@@ -39,11 +39,11 @@ const Wishlist = () => {
             return (
               <div
                 key={product_id}
-                className="flex items-start justify-between bg-white rounded-2xl p-8 mb-6"
+                className="flex md:flex-row flex-col items-center md:items-start justify-between bg-white rounded-2xl p-8 mb-6"
               >
-                <div className="flex gap-8">
+                <div className="flex md:flex-row flex-col gap-8">
                   <img
-                    className="w-[200px] object-cover  rounded-xl"
+                    className="md:w-[200px] object-cover  rounded-xl"
                     src={product_image}
                     alt=""
                   />

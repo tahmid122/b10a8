@@ -73,11 +73,11 @@ const Statistics = () => {
         para="Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
         isTrue2={true}
       />
-      <div className="mx-40 mt-12 mb-28">
+      <div className="mx-5  md:mx-40 mt-12 mb-28">
         <div>
           <h5 className="font-bold text-2xl">Statistics</h5>
         </div>
-        <div className="mt-8 w-full bg-white rounded-2xl p-8">
+        <div className="mt-8 w-full bg-white rounded-2xl p-5 md:p-8">
           <ResponsiveContainer width="100%" height={400}>
             <ComposedChart data={chartData}>
               <CartesianGrid stroke="#f5f5f5" />

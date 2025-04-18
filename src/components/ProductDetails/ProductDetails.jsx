@@ -24,17 +24,17 @@ const ProductDetails = () => {
           "Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!"
         }
       />
-      <div className="p-8 rounded-3xl bg-white -translate-y-2/6 gap-8 flex w-3/4 mx-auto">
-        <div className="w-[35%]">
+      <div className="p-5 md:p-8 rounded-3xl bg-white -translate-y-1/6 md:-translate-y-2/6 gap-5 md:gap-8 flex md:flex-row flex-col w-[90%] md:w-3/4 mx-auto">
+        <div className="md:w-[35%]">
           <img
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-[250px] md:h-full object-cover rounded-2xl"
             src={gadget.product_image}
             alt=""
           />
         </div>
-        <div className="flex-1">
+        <div className="md:flex-1">
           <div className="mb-5 space-y-2">
-            <h3 className="font-semibold text-[28px]">
+            <h3 className="font-semibold  text-2xl md:text-[28px]">
               {gadget.product_title}
             </h3>
             <p className="font-semibold text-xl">Price:${gadget.price}</p>

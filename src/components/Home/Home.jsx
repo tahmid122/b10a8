@@ -7,8 +7,8 @@ const Home = () => {
     <div>
       <div className="mx-8 pt-6 pb-8 rounded-4xl bg-[#9538e2] mt-7  min-h-[690px] relative">
         <NavBar2 />
-        <div className="px-32 mt-12 text-white flex flex-col items-center justify-center gap-6">
-          <h1 className="font-bold text-5xl  text-center">
+        <div className="p-5 md:px-32 mt-12 text-white flex flex-col items-center justify-center gap-6">
+          <h1 className="font-bold text-3xl md:text-5xl  text-center">
             Upgrade Your Tech Accessorize with Gadget Heaven Accessories
           </h1>
           <p className="text-base text-center">
@@ -20,15 +20,15 @@ const Home = () => {
             Shop Now
           </button>
         </div>
-        <div className="bg-[#ffffff87] w-[70%] mx-auto rounded-3xl p-6 min-h-[500px] absolute translate-y-1/12 z-10 left-60">
+        <div className="bg-[#ffffff87] md:border-none border border-gray-500 md:w-[70%] mx-auto rounded-3xl p-6 md:min-h-[500px] absolute translate-y-1/12 z-10 md:left-60">
           <img
-            className="h-[500px] w-full object-cover rounded-3xl"
+            className="md:h-[500px] w-full object-cover rounded-3xl"
             src="banner.jpg"
             alt=""
           />
         </div>
       </div>
-      <div className="mx-8 mt-[350px]">
+      <div className="mx-8 mt-[200px] md:mt-[350px]">
         <Explore />
       </div>
     </div>

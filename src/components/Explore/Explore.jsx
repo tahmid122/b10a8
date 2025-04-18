@@ -15,12 +15,12 @@ const Explore = () => {
   const location = useLocation();
   const path = location.pathname;
   return (
-    <div className="mx-40 pb-24">
+    <div className="md:mx-40 pb-24">
       <h1 className="font-bold text-[40px] mb-12 text-center">
         Explore Cutting-Edge Gadgets
       </h1>
-      <div className="flex items-start gap-6">
-        <div className="flex-1/5 bg-white flex flex-col gap-6 p-6 rounded-2xl border border-slate-200 cat-btns">
+      <div className="flex items-start gap-6 md:flex-row flex-col">
+        <div className="w-full md:flex-1/5 bg-white flex flex-col gap-6 p-6 rounded-2xl border border-slate-200 cat-btns">
           {buttons.map((button, index) => (
             <NavLink
               to={`/${button === "All Products" ? "" : button}`}
